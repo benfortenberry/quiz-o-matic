@@ -1,6 +1,6 @@
-# ben-quiz
+# Quiz-O-Matic
 
-> A Vue.js project
+> A demo Vue app using Open trivia DB https://opentdb.com/api_config.php
 
 ## Build Setup
 
