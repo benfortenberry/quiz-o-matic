@@ -17,10 +17,13 @@ module.exports = {
       .click('.is-link')
       .pause(1000)
       .assert.elementPresent('.subtitle')
+      .assert.elementPresent('.is-link')
       .click('.is-link')
       .assert.elementPresent('.subtitle')
       .assert.containsText('p', 'You scored: 0%')
-      // .assert.elementCount('img', 1)
+      .assert.elementPresent('.is-link')
+      .click('.is-link')
+      .assert.containsText('label', '# Questions:')
       .end()
   }
 }
