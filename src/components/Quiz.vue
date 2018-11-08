@@ -18,24 +18,16 @@
 
                 </div>
 
-                <!-- <div class="control" v-if="q.type =='boolean'">
-                    <label class="radio" v-for="(a, a_i) in q.incorrect_answers">
-                        <input type="radio" v-model="q.answer" :value="a" :name="index + a">
-                        {{a}}
-                    </label>
-
-                </div> -->
                 <br />
 
                 <span class="tag is-light">{{q.category}}</span>
                 <span v-if="q.difficulty == 'easy'" class="tag is-success">Easy</span>
                 <span v-if="q.difficulty == 'medium'" class="tag is-warning">Medium</span>
                 <span v-if="q.difficulty == 'hard'" class="tag is-danger">Hard</span>
-                <!-- {{q.incorrect_answers}} -->
 
             </li>
         </ul>
-        <!-- {{questions}} -->
+
         <br />
         <div class="level">
             <div class="level-item">
@@ -77,8 +69,7 @@ export default {
 
         }
         questions.forEach(q => {
-            // if(q.type == 'multiple')
-            // {
+
             q.incorrect_answers.push(q.correct_answer);
 
             let shuffled = q.incorrect_answers
@@ -88,8 +79,6 @@ export default {
 
             q.incorrect_answers = shuffled;
 
-
-            // }
         });
 
         this.questions = questions;
@@ -102,11 +91,10 @@ export default {
 
                 answers.push(q.answer);
 
-
             });
 
             this.$store.commit('setAnswers', answers);
-            // console.log(answers);
+
             this.$router.push('Results')
 
         },
@@ -121,20 +109,7 @@ export default {
         }
     },
     computed: {
-        // questions(){
-        //      //
 
-
-
-
-
-
-
-
-
-        //                 return this.questions;
-
-        // }
     }
 
 }

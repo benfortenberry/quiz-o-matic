@@ -7,11 +7,13 @@
       <ul>
         <li v-for="(q, i) in questions">
           {{i +1}}.) {{decoder(q.question)}} - {{decoder(q.correct_answer)}}
-          <!-- {{questions}} -->
+
           <span v-if="q.correct" class="tag is-success">
-            <font-awesome-icon icon="check" /></span>
+            <!-- <font-awesome-icon icon="check" /> -->
+          </span>
           <span v-if="!q.correct" class="tag is-danger">
-            <font-awesome-icon icon="times" /></span>
+            <!-- <font-awesome-icon icon="times" /> -->
+          </span>
           <br />
           <br />
         </li>
@@ -91,16 +93,10 @@ export default {
             questions[i].correct = false;
           }
 
-
-
-
-
-
         });
 
         this.questions = questions;
 
-        // console.log(numCorrect)
         return numCorrect / questions.length * 100;
       }
     }

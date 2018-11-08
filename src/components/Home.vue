@@ -8,7 +8,7 @@
           <label># Questions:</label>
         </div>
         <div class="level-item">
-          <input type="number" class="input" v-model="numQuestions" placeholder="Enter Number of Questions">
+          <input type="number" id="numQues" class="input" v-model="numQuestions" placeholder="Enter Number of Questions">
         </div>
       </div>
       <br />
@@ -122,7 +122,6 @@ export default {
   name: 'Home',
   data() {
     return {
-      // msg: 'Welcome to Your Vue.js App',
       numQuestions: 10,
       difficulty: 'any',
       qTypes: 'any',
@@ -140,9 +139,7 @@ export default {
       // console.log(this.quizUrl)
       this.loading = true;
       axios.get(this.quizUrl, {
-        // headers: {
-        //   'x-api-key': 'de102100-4217-4bf3-8bce-66aaf9c7b3ec'
-        // }
+
       })
         .then(response => {
           // console.log(response.data);
@@ -166,7 +163,6 @@ export default {
             this.error = true;
           }
 
-          // this.cat = response.data[0].url;
         })
         .catch(function (error) {
           // console.log(error);
@@ -179,7 +175,6 @@ export default {
   mounted() {
     let settings = this.$store.state.quizSettings;
     if (settings) {
-      // console.log(settings)
       this.difficulty = settings.difficulty;
       this.qTypes = settings.qTypes;
       this.category = settings.category;
@@ -212,6 +207,6 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 </style>
